@@ -26,9 +26,9 @@ pipeline
     }
     post
     {
-        sucess
+        success
         {
-            echo  'BUILD SUCCESSFUL'
+            echo 'BUILD SUCCESSFUL'
         }
         failure
         {
