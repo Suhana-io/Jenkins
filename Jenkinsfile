@@ -3,17 +3,19 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                bat 'javac hi.java'
+                dir('src') {
+                    // Compile hi.java
+                    sh 'javac hi.java'
+                }
             }
         }
         stage('Run') {
             steps {
-                bat 'java hi'
+                dir('src') {
+                    // Run the hi class
+                    sh 'java hi'
+                }
             }
         }
-    }
-    post {
-        success { echo 'BUILD SUCCESSFUL' }
-        failure { echo 'BUILD FAILED' }
     }
 }
